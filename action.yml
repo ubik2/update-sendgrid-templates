@@ -1,14 +1,18 @@
-name: "Update Sendgrid Templates"
-description: "Github Action: Update Sendgrid Templates"
+name: "Update SendGrid Templates"
+description: "Github Action: Update SendGrid Templates"
+author: "Robin McCollum"
 inputs:
   template_info:
     description: "File path relative to GITHUB_WORKSPACE that contains information about the templates"
     required: true
     default: "./mail_templates/sendgrid.json"
   environment:
-    description: "Deployment environment (e.g. develop)",
+    description: "Deployment environment (e.g. develop)"
     required: true
     default: "develop"
 runs:
   using: "node16"
   main: "dist/index.js"
+branding:
+  icon: "check"
+  color: purple
