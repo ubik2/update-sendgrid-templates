@@ -1,13 +1,14 @@
-name: 'Wait'
-description: 'Wait a designated number of milliseconds'
+name: "Update Sendgrid Templates"
+description: "Github Action: Update Sendgrid Templates"
 inputs:
-  milliseconds:  # id of input
-    description: 'number of milliseconds to wait'
+  template_info:
+    description: "File path relative to GITHUB_WORKSPACE that contains information about the templates"
     required: true
-    default: '1000'
-outputs:
-  time: # output will be available to future steps
-    description: 'The current time after waiting'
+    default: "./mail_templates/sendgrid.json"
+  environment:
+    description: "Deployment environment (e.g. develop)",
+    required: true
+    default: "develop"
 runs:
-  using: 'node16'
-  main: 'dist/index.js'
+  using: "node16"
+  main: "dist/index.js"
