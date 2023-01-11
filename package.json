@@ -1,6 +1,6 @@
 {
   "name": "update-sendgrid-templates-action",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "A Github action for updating templates on sendgrid",
   "main": "dist/index.js",
   "scripts": {
