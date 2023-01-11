@@ -9,7 +9,7 @@ interface TemplateInfoEntry {
   name: string;
   subject: string;
   html: string;
-  test_data?: { [key: string]: any };
+  test_data?: { [key: string]: unknown };
 }
 
 interface TemplateInfo {
@@ -17,7 +17,7 @@ interface TemplateInfo {
   name: string;
   subject: string;
   html: string;
-  test_data?: { [key: string]: any };
+  test_data?: { [key: string]: unknown };
 }
 
 interface BaseTemplateVersion {
@@ -51,7 +51,7 @@ function getAbsoluteTemplateInfoPath(rootDir: string, templateInfoPath: string):
 
 function getTemplateInfo(absolutePath: string): [TemplateInfoEntry] {
   const templateInfo = JSON.parse(fs.readFileSync(absolutePath, "utf8"));
-  return templateInfo.map((item: any) => item as TemplateInfoEntry);
+  return templateInfo.map((item: unknown) => item as TemplateInfoEntry);
 }
 
 async function getExistingTemplates(client: Client, template_id: string): Promise<[TemplateVersion]> {
